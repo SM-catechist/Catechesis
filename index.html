@@ -90,19 +90,19 @@ Very soon the name of catechesis was given to the whole of the efforts within th
     <h1>More on Catechesis...</h1>
 
     <!-- Buttons -->
-    <button onclick="showDocument('ABC')">Catechism of the Catholic Church</button>
-    <button onclick="showDocument('123')">Catechetical Directories</button>
-    <button onclick="showDocument('DEF')">Church Fathers</button>
-    <button onclick="showDocument('GHI')">Saintly Catechists</button>
-    <button onclick="showDocument('GHI')">Syro Malabar Catechesis</button>
+    <button onclick="openDocument('https://example.com/abc')">Catechism of the Catholic Church</button>
+    <button onclick="openDocument('https://example.com/123')">Catechetical Directories</button>
+    <button onclick="openDocument('https://example.com/def')">Church Fathers</button>
+    <button onclick="openDocument('https://example.com/ghi')">Saintly Catechists</button>
+    <button onclick="openDocument('https://example.com/syro')">Syro Malabar Catechesis</button>
 
     <!-- Display Area for Documents -->
     <div id="document-container"></div>
 
     <script>
-        // Function to display documents
-        function showDocument(content) {
-            document.getElementById('document-container').innerHTML = content;
+        // Function to open documents in a new page
+        function openDocument(url) {
+            window.open(url, '_blank');
         }
     </script>
 
