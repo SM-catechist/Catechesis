@@ -83,18 +83,30 @@ Very soon the name of catechesis was given to the whole of the efforts within th
     <h1>Document Viewer</h1>
 
     <!-- Buttons -->
-    <button onclick="showDocument('ABC')">Document 1</button>
-    <button onclick="showDocument('123')">Document 2</button>
-    <button onclick="showDocument('DEF')">Document 3</button>
-    <button onclick="showDocument('GHI')">Document 4</button>
+    <button onclick="openDocument('https://example.com/abc')">Catechism of the Catholic Church</button>
+    <button onclick="openDocument('https://example.com/123')">Catechetical Directories</button>
+    <button onclick="openDocument('https://example.com/def')">Church Fathers</button>
+    <button onclick="openDocument('https://example.com/ghi')">Saintly Catechists</button>
+    <button onclick="openDocument('https://example.com/syro')">Syro Malabar Catechesis</button>
 
-    <!-- Display Area for Documents -->
-    <div id="document-container"></div>
+<script>
+        // Function to open documents in a new page
+        function openDocument(url) {
+            // Open the main page
+            var mainPage = window.open(url, '_blank');
 
-    <script>
-        // Function to display documents
-        function showDocument(content) {
-            document.getElementById('document-container').innerHTML = content;
+            // Add sublinks dynamically
+            var sublinks = ['Sublink 1', 'Sublink 2', 'Sublink 3'];
+            sublinks.forEach(function(sublink) {
+                var sublinkElement = document.createElement('div');
+                sublinkElement.className = 'sublink';
+                sublinkElement.textContent = sublink;
+                sublinkElement.onclick = function() {
+                    // Example: Open sublink in the same window
+                    mainPage.location.href = 'https://example.com/' + sublink.toLowerCase();
+                };
+                mainPage.document.body.appendChild(sublinkElement);
+            });
         }
     </script>
 
