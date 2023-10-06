@@ -93,18 +93,7 @@ Very soon the name of catechesis was given to the whole of the efforts within th
             // Open the main page
             var mainPage = window.open(url, '_blank');
 
-            // Add sublinks dynamically
-            var sublinks = ['Sublink 1', 'Sublink 2', 'Sublink 3'];
-            sublinks.forEach(function(sublink) {
-                var sublinkElement = document.createElement('div');
-                sublinkElement.className = 'sublink';
-                sublinkElement.textContent = sublink;
-                sublinkElement.onclick = function() {
-                    // Example: Open sublink in the same window
-                    mainPage.location.href = 'https://example.com/' + sublink.toLowerCase();
-                };
-                mainPage.document.body.appendChild(sublinkElement);
-            });
+    
         }
     </script>
 
